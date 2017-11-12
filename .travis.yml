@@ -1,0 +1,14 @@
+sudo: required
+language: cpp
+cache:
+  ccache: true
+
+before_install:
+  - bash build.sh before-install
+
+jobs:
+  include:
+    - stage: Core Build
+      env: TASK="build"
+      compiler: gcc
+      script: bash build.sh $TASK
