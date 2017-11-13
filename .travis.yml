@@ -6,6 +6,13 @@ cache:
 before_install:
   - bash build.sh before-install
 
+notifications:
+  email:
+    recipients:
+      - glc12125@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
+
 jobs:
   include:
     - stage: Core Build
